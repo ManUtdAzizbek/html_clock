@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+        
+        #clock {
+            position: absolute;
+            top: 30%;
+            font-family: 'Righteous', sans-serif;
+            left: 28%;
+            background-color: blue;
+            color: white;
+            font-size: 150px;
+            border-radius: 10px;
+            padding: 10px 30px;
+            box-shadow: 0px 0px 10px 3px #fff;
+        }
+        
+        @media (max-width: 576px) {
+            #clock {
+                top: 20%;
+                font-size: 40px;
+                left: 25%;
+            }
+        }
+    </style>
+
+
+    <div id="clock"></div>
+
+
+    <script>
+        function time() {
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            if (m < 10) {
+                m = "0" + m;
+            }
+
+            if (s < 10) {
+                s = "0" + s;
+            }
+
+            document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+        }
+        setInterval(time, 1000);
+    </script>
+
+
+
+
+</body>
+
+</html>
